@@ -22,6 +22,8 @@ shutdown() {
   exit
 }
 
+apt update -yqq && DEBIAN_FRONTEND=noninteractive apt upgrade --assume-yes --option "Dpkg::Options::=--force-confdef" --option "Dpkg::Options::=--force-confold"
+
 # store enviroment variables
 export > /etc/envvars
 
